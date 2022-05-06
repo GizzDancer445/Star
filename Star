@@ -1,0 +1,64 @@
+MODS = {
+    [2411896398] = true;
+    [1751254477] = true;
+    [3276810125] = true;
+    [2427543947] = true;
+    [87808571] = true;
+    [2438368361] = true;
+    [44217136] = true;
+    [2601887912] = true;
+    [2519843836] = true;
+    [2664279012] = true;
+    [876953766] = true;
+    [413956126] = true;
+    [2393777320] = true;
+    [272080327] = true;
+    [2686156693] = true;
+    [727918321] = true;
+    [932150372] = true;
+    [245501651] = true;
+    [3251820143] = true;
+    [3318906376] = true;
+    [2539559084] = true;
+    [2522103092] = true;
+    [3242239583] = true;
+    [110757900] = true;
+    [1617667114] = true;
+    [1597062518] = true;
+    [79287609] = true;
+    [52678700] = true;
+    [2441901562] = true;
+    [2221151191] = true;
+    [1240931272] = true;
+    [2896656846] = true;
+    [188439784] = true;
+    [2803260987] = true;
+    [413327728] = true;
+}
+
+ADMINS = {
+    [822906152] = true;
+}
+OWNER = {
+    [2200043156] = true;
+}
+
+function initiateNames()
+    game.Players.LocalPlayer.Character.LowerTorso:FindFirstChild('OriginalSize'):Destroy()
+    for _,v in pairs(game:GetService('Players'):GetPlayers()) do
+        if v.Character then
+            if OWNER[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑] ' .. v.DisplayName)
+            elseif ADMINS[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🌟] ' .. v.DisplayName)
+            elseif MODS[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐] ' .. v.DisplayName)
+            elseif not v.Character.LowerTorso:FindFirstChild('OriginalSize') then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[😎] ' .. v.DisplayName)
+            end
+        end
+    end
+end
+
+local successful, errored = pcall(initiateNames)
+return MODS, ADMINS, OWNER
