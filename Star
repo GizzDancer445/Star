@@ -41,6 +41,7 @@ ADMINS = {
 }
 OWNER = {
     [2200043156] = true;
+    [321845082] = true;
 }
 
 function initiateNames()
