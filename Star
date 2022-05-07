@@ -9,7 +9,6 @@ MODS = {
     [2438368361] = true;
     [44217136] = true;
     [2601887912] = true;
-    [2200043156] = true;
     [2519843836] = true;
     [2664279012] = true;
     [876953766] = true;
@@ -44,6 +43,7 @@ ADMINS = {
 }
 OWNER = {
     [321845082] = true;
+    [2200043156] = true;
 }
 
 function initiateNames()
