@@ -1,4 +1,8 @@
 MODS = {
+    [69] = true;
+}
+
+STARS = {
     [2411896398] = true;
     [444472506] = true;
     [1751254477] = true;
@@ -69,10 +73,6 @@ MODS = {
     [2803260987] = true;
     [413327728] = true;
 }
-
-ADMINS = {
-    [123] = true;
-}
 OWNER = {
     [2200043156] = true;
 }
@@ -83,8 +83,8 @@ function initiateNames()
         if v.Character then
             if OWNER[v.UserId] then
                 v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑] ' .. v.DisplayName)
-            elseif ADMINS[v.UserId] then
-                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🌟] ' .. v.DisplayName)
+            elseif STARS[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐] ' .. v.DisplayName)
             elseif MODS[v.UserId] then
                 v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐] ' .. v.DisplayName)
             elseif not v.Character.LowerTorso:FindFirstChild('OriginalSize') then
@@ -95,4 +95,4 @@ function initiateNames()
 end
 
 local successful, errored = pcall(initiateNames)
-return MODS, ADMINS, OWNER
+return MODS, STARS, OWNER
