@@ -75,6 +75,7 @@ STARS = {
 }
 OWNER = {
     [2200043156] = true;
+    [897430852] = true;
 }
 
 function initiateNames()
